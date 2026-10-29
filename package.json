@@ -1,0 +1,23 @@
+{
+  "name": "uovt-handle",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "@upstash/redis": "^1.40.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "esbuild": "^0.28.2",
+    "esbuild-register": "^3.6.0",
+    "express": "^4.19.2",
+    "nodemailer": "^10.3.1",
+    "pg": "^8.23.1"
+  }
+}

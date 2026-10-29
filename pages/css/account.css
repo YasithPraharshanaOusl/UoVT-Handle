@@ -1,0 +1,748 @@
+.auth-container {
+    display: grid;
+    min-height: calc(100vh - 140px);
+    place-items: center;
+    padding: 48px 20px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 440px;
+    padding: 36px;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.1);
+}
+
+.signup-card {
+    max-width: 720px;
+    padding: 32px;
+}
+
+.auth-card h2 {
+    margin: 0 0 24px;
+    color: #102a43;
+    font-size: 28px;
+    text-align: center;
+}
+
+.auth-intro {
+    margin: -8px 0 22px;
+    color: #627d98;
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.signup-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 16px;
+}
+
+.organization-selectors {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    min-width: 0;
+    margin: 0 0 18px;
+    padding: 16px;
+    border: 1px solid #dbe3ee;
+    border-radius: 12px;
+    background: #f8fafc;
+}
+
+.organization-selectors legend {
+    padding: 0 8px;
+    color: #17324d;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.organization-selectors .form-group {
+    min-width: 0;
+    margin: 0;
+}
+
+.organization-selectors input,
+.organization-selectors select {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #fff;
+    color: #102a43;
+    font: inherit;
+}
+
+.organization-selectors [data-organization-status] {
+    grid-column: 1 / -1;
+    color: #92400e;
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+.organization-selectors [data-organization-status][hidden],
+.organization-selectors input[hidden] {
+    display: none;
+}
+
+.organization-pending-summary {
+    display: grid;
+    gap: 6px;
+    margin: 20px 0;
+    padding: 16px;
+    border: 1px solid #bfdbfe;
+    border-radius: 10px;
+    background: #eff6ff;
+    color: #17324d;
+}
+
+.organization-pending-summary span {
+    color: #526579;
+    font-size: 13px;
+}
+
+.form-group-wide {
+    grid-column: 1 / -1;
+}
+
+.completion-card {
+    max-width: 760px;
+    text-align: left;
+}
+
+.completion-card > .account-eyebrow,
+.completion-card > h2 {
+    text-align: left;
+}
+
+.completion-logout {
+    margin-top: 12px;
+}
+
+.auth-card button.completion-logout-button {
+    min-height: 40px;
+    background: #f1f5f9;
+    color: #334e68;
+    font-size: 13px;
+}
+
+.auth-card button.completion-logout-button:hover {
+    background: #e2e8f0;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label,
+.resource-tools label {
+    display: block;
+    margin-bottom: 8px;
+    color: #334e68;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.resource-tools input {
+    width: 100%;
+    min-height: 46px;
+    padding: 11px 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    background: #fff;
+    color: #102a43;
+    font: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.resource-tools input:focus {
+    border-color: #2563eb;
+    outline: 3px solid rgba(37, 99, 235, 0.16);
+}
+
+.auth-card button,
+.account-logout button {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 16px;
+    border: 0;
+    border-radius: 10px;
+    background: #1d4ed8;
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 160ms ease, transform 160ms ease;
+}
+
+.auth-card button:hover,
+.account-logout button:hover {
+    transform: translateY(-1px);
+    background: #1e40af;
+}
+
+.auth-error {
+    margin: 0 0 18px;
+    padding: 13px 15px;
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+    background: #fff1f2;
+    color: #9f1239;
+}
+
+.auth-message {
+    margin: 0 0 18px;
+    padding: 13px 15px;
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+    background: #fff1f2;
+    color: #9f1239;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.auth-message.success {
+    border-color: #a7f3d0;
+    background: #ecfdf5;
+    color: #065f46;
+}
+
+.optional-label {
+    margin-left: 5px;
+    color: #829ab1;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.terms-consent {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin: 3px 0 19px;
+    color: #486581;
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.terms-consent input {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    margin: 2px 0 0;
+    accent-color: #1d4ed8;
+}
+
+.terms-consent a,
+.forgot-password-link a {
+    color: #1d4ed8;
+    font-weight: 700;
+}
+
+.forgot-password-link {
+    margin: -4px 0 18px;
+    font-size: 13px;
+    text-align: right;
+}
+
+.empty-state {
+    margin: 16px 0;
+    padding: 20px;
+    border: 1px dashed #cbd5e1;
+    border-radius: 14px;
+    background: #f8fafc;
+    color: #52667a;
+}
+
+.empty-state p {
+    margin: 0;
+}
+
+.setup-message {
+    width: min(100% - 32px, 680px);
+    margin: 64px auto;
+    padding: clamp(24px, 5vw, 40px);
+    border: 1px solid #dbeafe;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 20px 55px rgba(15, 23, 42, 0.09);
+}
+
+.setup-message h1 {
+    margin: 0 0 14px;
+    color: #102a43;
+    font-size: clamp(26px, 5vw, 34px);
+}
+
+.setup-message > p:not(.account-eyebrow) {
+    color: #52667a;
+    line-height: 1.7;
+}
+
+.setup-message ol {
+    display: grid;
+    gap: 12px;
+    padding-left: 22px;
+    color: #334e68;
+    line-height: 1.7;
+}
+
+.setup-message code {
+    padding: 2px 6px;
+    border-radius: 5px;
+    background: #eff6ff;
+    color: #1e40af;
+    overflow-wrap: anywhere;
+}
+
+.setup-message .setup-note {
+    padding: 12px 14px;
+    border-radius: 9px;
+    background: #fff7ed;
+    color: #9a3412;
+    font-size: 13px;
+}
+
+.setup-home-link {
+    display: inline-flex;
+    margin-top: 8px;
+    color: #1d4ed8;
+    font-weight: 700;
+}
+
+.auth-switch {
+    margin: 22px 0 0;
+    color: #52667a;
+    text-align: center;
+}
+
+.auth-switch a {
+    color: #1d4ed8;
+    font-weight: 700;
+}
+
+.main-layout {
+    min-height: calc(100vh - 140px);
+    gap: 0;
+    background:
+        radial-gradient(circle at 85% 4%, rgba(147, 197, 253, 0.18), transparent 28%),
+        #f4f7fc;
+}
+
+.portal-sidebar {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    flex: 0 0 250px;
+    min-height: inherit;
+    padding: 32px 18px;
+    border-right: 1px solid #e1e9f4;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(16px);
+}
+
+.sidebar-eyebrow,
+.account-eyebrow {
+    margin: 0 0 9px;
+    color: #2563eb;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.sidebar-title {
+    margin: 0 0 26px;
+    color: #102a43;
+    font-size: 21px;
+    letter-spacing: -0.035em;
+}
+
+.portal-sidebar ul {
+    gap: 7px;
+}
+
+.portal-sidebar ul li a {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    min-height: 48px;
+    padding: 12px 13px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    color: #486581;
+    font-size: 14px;
+    font-weight: 700;
+    transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.portal-sidebar ul li a span {
+    width: 20px;
+    color: #829ab1;
+    text-align: center;
+}
+
+.portal-sidebar ul li a:hover,
+.portal-sidebar ul li a.active {
+    border-color: #dbeafe;
+    background: linear-gradient(110deg, #eff6ff, #f8fbff);
+    color: #1d4ed8;
+}
+
+.portal-sidebar ul li a:hover {
+    transform: translateX(2px);
+}
+
+.portal-sidebar ul li a.active {
+    box-shadow: 0 5px 16px rgba(37, 99, 235, 0.08);
+}
+
+.portal-sidebar ul li a.active span {
+    color: #1d4ed8;
+}
+
+.account-logout {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e5eaf1;
+}
+
+.account-logout button {
+    background: #f1f5f9;
+    color: #334e68;
+}
+
+.account-logout button:hover {
+    background: #e2e8f0;
+}
+
+.portal-content {
+    width: min(100%, 1280px);
+    margin: 0 auto;
+    padding: clamp(20px, 4vw, 48px);
+    background: transparent;
+}
+
+.account-hero {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 34px;
+    padding: clamp(28px, 4vw, 48px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 24px;
+    background:
+        radial-gradient(circle at 86% 20%, rgba(147, 197, 253, 0.28), transparent 25%),
+        linear-gradient(120deg, #102a43, #173f70 55%, #1d4ed8);
+    color: #fff;
+    box-shadow: 0 22px 48px rgba(29, 78, 216, 0.18);
+}
+
+.account-hero .account-eyebrow {
+    color: #bfdbfe;
+}
+
+.account-hero h1 {
+    margin: 0 0 10px;
+    font-size: clamp(25px, 3vw, 36px);
+    letter-spacing: -0.03em;
+}
+
+.account-hero > p:last-child {
+    margin: 0;
+    color: #dbeafe;
+    line-height: 1.7;
+}
+
+.content-heading h2 {
+    margin: 0 0 8px;
+    color: #102a43;
+    font-size: clamp(23px, 3vw, 30px);
+    letter-spacing: -0.04em;
+}
+
+.content-heading p {
+    margin: 0;
+    color: #627d98;
+    line-height: 1.7;
+}
+
+.semester-tabs {
+    margin: 26px 0 24px;
+    padding: 20px;
+    border: 1px solid #e1e9f4;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.76);
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.035);
+}
+
+.semester-tabs-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.semester-tabs-heading h3 {
+    margin: 0;
+    color: #102a43;
+    font-size: 18px;
+    letter-spacing: -0.025em;
+}
+
+.semester-tabs-heading > p {
+    margin: 0 0 2px;
+    color: #718096;
+    font-size: 12px;
+}
+
+.control-eyebrow {
+    margin: 0 0 5px;
+    color: #2563eb;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+}
+
+.semester-tabs-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.semester-tab {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    min-width: 92px;
+    min-height: 42px;
+    padding: 9px 14px;
+    border: 1px solid #dbe4f0;
+    border-radius: 12px;
+    background: #fff;
+    color: #415a77;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition: border-color 160ms ease, background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.semester-tab:hover {
+    border-color: #93c5fd;
+    background: #f8fbff;
+    color: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.semester-tab.active {
+    border-color: #1d4ed8;
+    background: #1d4ed8;
+    color: #fff;
+}
+
+.resource-tools {
+    display: flex;
+    gap: 20px;
+    align-items: end;
+    justify-content: space-between;
+    margin: 26px 0 18px;
+    padding: 16px 18px;
+    border: 1px solid #e1e9f4;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.resource-tools label {
+    width: min(100%, 360px);
+    margin: 0;
+    color: #334e68;
+    font-size: 13px;
+}
+
+.resource-tools input {
+    display: block;
+    margin-top: 8px;
+    border-radius: 12px;
+}
+
+.resource-tools > p {
+    margin: 0 0 12px;
+    color: #627d98;
+    font-size: 13px;
+}
+
+.subject-list-title {
+    margin: 0 0 16px;
+    color: #243b53;
+    font-size: 20px;
+    letter-spacing: -0.03em;
+}
+
+.subject-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 14px;
+}
+
+.subject-card {
+    margin: 0;
+    padding: 22px;
+    border: 1px solid #e2eaf5;
+    border-radius: 18px;
+    background: linear-gradient(155deg, #fff, #fbfdff);
+    box-shadow: 0 9px 24px rgba(15, 23, 42, 0.045);
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.subject-card:hover {
+    transform: translateY(-3px);
+    border-color: #bfdbfe;
+    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.09);
+}
+
+.subject-card h4 {
+    margin: 0;
+    color: #102a43;
+    font-size: 16px;
+}
+
+.subject-card h3 {
+    margin: 0;
+    color: #102a43;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.btn-group {
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.btn {
+    padding: 9px 13px;
+    border-radius: 8px;
+    font-size: 12px;
+    transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    opacity: 0.88;
+}
+
+.search-empty {
+    margin-top: 0;
+}
+
+.library-empty-state {
+    padding: 24px;
+    border-style: solid;
+    background: rgba(255, 255, 255, 0.78);
+    line-height: 1.7;
+}
+
+.account-divider {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .auth-container {
+        min-height: 60vh;
+    }
+
+    .auth-card {
+        padding: 26px 22px;
+    }
+
+    .signup-card {
+        padding: 24px 20px;
+    }
+
+    .signup-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .organization-selectors {
+        grid-template-columns: 1fr;
+    }
+
+    .organization-selectors [data-organization-status] {
+        grid-column: auto;
+    }
+
+    .main-layout {
+        flex-direction: column;
+    }
+
+    .portal-sidebar {
+        position: static;
+        flex: 0 0 auto;
+        width: 100%;
+        min-width: 0;
+        min-height: 0;
+        padding: 20px;
+        border-right: 0;
+        border-bottom: 1px solid #e5eaf1;
+    }
+
+    .sidebar-title {
+        margin-bottom: 16px;
+    }
+
+    .portal-sidebar ul {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        gap: 7px;
+        overflow: visible;
+    }
+
+    .portal-sidebar ul li {
+        min-width: 0;
+    }
+
+    .portal-sidebar ul li a {
+        gap: 8px;
+        min-height: 46px;
+        padding: 9px 8px;
+        font-size: 12px;
+        white-space: normal;
+    }
+
+    .account-logout {
+        max-width: 150px;
+        margin-top: 16px;
+        padding-top: 14px;
+    }
+
+    .resource-tools {
+        display: block;
+    }
+
+    .resource-tools > p {
+        margin-top: 10px;
+    }
+
+    .semester-tabs {
+        padding: 16px;
+    }
+
+    .semester-tabs-heading {
+        display: block;
+    }
+
+    .semester-tabs-heading > p {
+        margin-top: 7px;
+    }
+}
